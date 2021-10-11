@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="596b8f7d-9b71-4d9a-81e1-e86d86103266" name="Changes" comment="">
+    <list default="true" id="596b8f7d-9b71-4d9a-81e1-e86d86103266" name="Changes" comment="add kind switch case">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/DepositCalc/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/DepositCalc/index.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/DepositCalc/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/DepositCalc/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/deposit.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/deposit.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/types/deposit.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/types/deposit.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,8 +48,16 @@
       <updated>1633791609291</updated>
       <workItem from="1633791610556" duration="21243000" />
       <workItem from="1633872639835" duration="10639000" />
-      <workItem from="1633936688102" duration="24052000" />
+      <workItem from="1633936688102" duration="27055000" />
     </task>
+    <task id="LOCAL-00001" summary="add kind switch case">
+      <created>1633981186482</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1633981186482</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -65,5 +74,9 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="add kind switch case" />
+    <option name="LAST_COMMIT_MESSAGE" value="add kind switch case" />
   </component>
 </project>

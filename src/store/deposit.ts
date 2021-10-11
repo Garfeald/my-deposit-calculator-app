@@ -214,12 +214,14 @@ class Deposit implements IDeposit{
             case "replenish":
                 if(this.depositPeriod < 121) {
                     this.minSliderValue = 5000000
+                    this.percentageRate = 4.74
                     if(this.depositSum <= 5000000) {
                         return this.depositSum = 5000000, this.percentageRate = 4.74, this.minSliderValue = 5000000
                     }
                 }
                 if(this.depositPeriod >= 121) {
                     this.minSliderValue = 5000000
+                    this.percentageRate = 4.75
                     if(this.depositSum <= 5000000) {
                         return this.depositSum = 5000000, this.percentageRate = 4.75, this.minSliderValue = 5000000
                     }

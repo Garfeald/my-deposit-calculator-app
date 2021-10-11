@@ -1,11 +1,12 @@
 import {observer} from "mobx-react-lite";
-import {ChangeEvent, FC, ReactElement, useEffect, useState} from "react";
+import {FC, ReactElement, useEffect, useRef, useState} from "react";
 import {Slider, Box, Select, MenuItem} from "@material-ui/core";
 import deposit from '../../store/deposit'
 import './index.css';
 import {LightTooltip} from "../../helpers";
+import ReactToPrint from 'react-to-print';
 
-export const DepositCalc: FC = observer((): ReactElement => {
+export const DepositCalc: FC = observer((ref): ReactElement => {
 
     const [daysValue, setDaysValue] = useState<number>(1);
 
@@ -30,6 +31,8 @@ export const DepositCalc: FC = observer((): ReactElement => {
         setDepValue(newValue);
         deposit.depositSumChange(newValue)
     };
+
+    const depositRef = useRef(null)
 
     useEffect(() => {
         deposit.actualDepositKind(deposit.depositKindCode)
@@ -57,8 +60,12 @@ export const DepositCalc: FC = observer((): ReactElement => {
     const base = 'DepositCalc'
 
     return (
-        <div className={base}>
-            <div className={`${base}__block`}>
+        <div className={base} >
+            <ReactToPrint
+                trigger={() => <button className="Print" >Печать</button>}
+                content={() => depositRef.current}
+            />
+            <div className={`${base}__block`} ref={depositRef}>
                 <div className={`${base}__title`}>
                     <h3>
                         Депозитный калькулятор
