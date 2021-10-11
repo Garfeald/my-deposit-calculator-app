@@ -2,15 +2,15 @@ import {ChangeEvent} from "react";
 import deposit from "../store/deposit";
 
 export interface IDeposit {
-    depositKind: DepositKind
+    depositKindCode: string
     depositKindsList: DepositKind[]
     depositKindChange: (e: ChangeEvent<{ name?: string | undefined; value: DepositKind | unknown}>) => void
     depositPeriod: number
     depositSum: number
+    minSliderValue: number
     depositPeriodChange: (days: number) => void
     depositSumChange: (sum: number) => void
     percentageRate: number
-    percentageRateChange: (days: number) => string
     totalSum: ({depValue, percentageRate, daysValue, daysInYear, toPercent}: TotalSum) => number
 }
 

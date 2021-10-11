@@ -9,7 +9,9 @@ export const DepositCalc: FC = observer((): ReactElement => {
 
     const [daysValue, setDaysValue] = useState<number>(1);
 
-    const [depValue, setDepValue] = useState<number>(100000);
+    const [depValue, setDepValue] = useState<number>(0);
+
+    const [depositIncome, setDepositIncome] = useState<number>(0)
 
     const [totalDepositSum, setTotalDepositSum] = useState<number>(
         deposit.totalSum({
@@ -18,8 +20,6 @@ export const DepositCalc: FC = observer((): ReactElement => {
             daysValue,
             daysInYear: 365,
             toPercent: 100}))
-
-    const [depositIncome, setDepositIncome] = useState<number>(totalDepositSum ? totalDepositSum - depValue : 0)
 
     const handleDaysChange = (event: Event, newValue: number) => {
         setDaysValue(newValue)
@@ -32,6 +32,18 @@ export const DepositCalc: FC = observer((): ReactElement => {
     };
 
     useEffect(() => {
+        deposit.actualDepositKind(deposit.depositKindCode)
+    },[])
+
+    useEffect(() => {
+        setDepValue(deposit.depositSum)
+    },[deposit.depositSum])
+
+    useEffect(() => {
+        deposit.actualDepositKind(deposit.depositKindCode)
+    }, [deposit.depositSum, deposit.depositPeriod, deposit.depositKindCode, deposit.percentageRate])
+
+    useEffect(() => {
         setTotalDepositSum(
             deposit.totalSum({
                 depValue,
@@ -40,7 +52,7 @@ export const DepositCalc: FC = observer((): ReactElement => {
                 daysInYear: 365,
                 toPercent: 100}))
         totalDepositSum && setDepositIncome(totalDepositSum - depValue)
-    },[depValue, totalDepositSum, daysValue])
+    },[depValue, totalDepositSum, daysValue, deposit.percentageRate])
 
     const base = 'DepositCalc'
 
@@ -60,7 +72,7 @@ export const DepositCalc: FC = observer((): ReactElement => {
                         onChange={e => deposit.depositKindChange(e)}
                         variant="outlined"
                         className={`${base}__settings-select`}
-                        defaultValue={'standart'}
+                        defaultValue={'unic'}
                     >
                         {deposit.depositKindsList.map((dep) => (
                             <MenuItem
@@ -112,7 +124,7 @@ export const DepositCalc: FC = observer((): ReactElement => {
                                 </div>
                             </div>
                                 <Slider
-                                    min={100000}
+                                    min={deposit.minSliderValue}
                                     max={10000000}
                                     step={100000}
                                     value={depValue}
@@ -125,7 +137,7 @@ export const DepositCalc: FC = observer((): ReactElement => {
                         <div className={`${base}__total-sum`}>
                             <div className={`${base}__total-item`}>
                                 <p>Процентная ставка</p>
-                                <h3>{deposit.percentageRateChange(daysValue)}%</h3>
+                                <h3>{deposit.percentageRate.toFixed(2)}%</h3>
                             </div>
                             <div className={`${base}__total-item`}>
                                 <p>Сумма через <span>{daysValue} дня</span></p>
