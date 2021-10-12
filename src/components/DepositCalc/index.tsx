@@ -3,7 +3,7 @@ import {FC, ReactElement, useEffect, useRef, useState} from "react";
 import {Slider, Box, Select, MenuItem} from "@material-ui/core";
 import deposit from '../../store/deposit'
 import './index.css';
-import {LightTooltip} from "../../helpers";
+import {correctEntryDays, LightTooltip} from "../../helpers";
 import ReactToPrint from 'react-to-print';
 
 export const DepositCalc: FC = observer((ref): ReactElement => {
@@ -101,7 +101,7 @@ export const DepositCalc: FC = observer((ref): ReactElement => {
                             <div className={`${base}__slider-sum`}>
                                 <p>{"Срок вклада"}</p>
                                 <div className={`${base}__sum-block`}>
-                                    <h3>{`${daysValue} дня`}</h3>
+                                    <h3>{daysValue} {correctEntryDays(daysValue)}</h3>
                                     <LightTooltip
                                         title={<div><h1>Срок вклада</h1></div>}
                                         placement="right"
@@ -153,7 +153,7 @@ export const DepositCalc: FC = observer((ref): ReactElement => {
                                 <h3>{deposit.percentageRate.toFixed(2)}%</h3>
                             </div>
                             <div className={`${base}__total-item`}>
-                                <p>Сумма через <span>{daysValue} дня</span></p>
+                                <p>Сумма через <span>{daysValue} {correctEntryDays(daysValue)}</span></p>
                                 <h3>{totalDepositSum.toFixed(2)} Р</h3>
                             </div>
                             <div className={`${base}__total-item`}>

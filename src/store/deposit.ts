@@ -44,8 +44,11 @@ class Deposit implements IDeposit{
                 this.minDaysValue = 1
                 if(this.depositPeriod < 2){
                     this.minSliderValue = 1000000
+                    if(this.depositSum < 1000000) {
+                        return this.depositSum = 1000000
+                    }
                     if(this.depositSum < 3000000) {
-                        return this.depositSum = 1000000, this.percentageRate = 2, this.minSliderValue = 1000000
+                        return this.percentageRate = 2, this.minSliderValue = 1000000
                     }
                     if(this.depositSum >= 3000000 && this.depositSum <= 4999999) {
                         return this.percentageRate = 2.75
@@ -56,8 +59,11 @@ class Deposit implements IDeposit{
                 }
                 if(this.depositPeriod >= 2 && this.depositPeriod < 7) {
                     this.minSliderValue = 1000000
+                    if(this.depositSum < 1000000) {
+                        return this.depositSum = 1000000
+                    }
                     if(this.depositSum < 3000000) {
-                        return this.depositSum = 1000000, this.percentageRate = 3.25, this.minSliderValue = 1000000
+                        return this.percentageRate = 3.25, this.minSliderValue = 1000000
                     }
                     if(this.depositSum >= 3000000 && this.depositSum <= 4999999) {
                         return this.percentageRate = 4
@@ -68,8 +74,11 @@ class Deposit implements IDeposit{
                 }
                 if(this.depositPeriod >= 7 && this.depositPeriod < 14) {
                     this.minSliderValue = 1000000
+                    if(this.depositSum < 1000000) {
+                        return this.depositSum = 1000000
+                    }
                     if(this.depositSum < 3000000) {
-                        return this.depositSum = 1000000, this.percentageRate = 3.5, this.minSliderValue = 1000000
+                        return this.percentageRate = 3.5, this.minSliderValue = 1000000
                     }
                     if(this.depositSum >= 3000000 && this.depositSum <= 4999999) {
                         return this.percentageRate = 4.05
@@ -80,8 +89,11 @@ class Deposit implements IDeposit{
                 }
                 if(this.depositPeriod >= 14 && this.depositPeriod < 21) {
                     this.minSliderValue = 1000000
+                    if(this.depositSum < 1000000) {
+                        return this.depositSum = 1000000
+                    }
                     if(this.depositSum < 3000000) {
-                        return this.depositSum = 1000000, this.percentageRate = 3.75, this.minSliderValue = 1000000
+                        return this.percentageRate = 3.75, this.minSliderValue = 1000000
                     }
                     if(this.depositSum >= 3000000 && this.depositSum <= 4999999) {
                         return this.percentageRate = 4.1
@@ -92,8 +104,11 @@ class Deposit implements IDeposit{
                 }
                 if(this.depositPeriod >= 21 && this.depositPeriod < 31) {
                     this.minSliderValue = 1000000
+                    if(this.depositSum < 1000000) {
+                        return this.depositSum = 1000000
+                    }
                     if(this.depositSum < 3000000) {
-                        return this.depositSum = 1000000, this.percentageRate = 4, this.minSliderValue = 1000000
+                        return this.percentageRate = 4, this.minSliderValue = 1000000
                     }
                     if(this.depositSum >= 3000000 && this.depositSum <= 4999999) {
                         return this.percentageRate = 4.15
@@ -131,8 +146,11 @@ class Deposit implements IDeposit{
                 this.minDaysValue = 1
                 if(this.depositPeriod < 2){
                     this.minSliderValue = 1000000
+                    if(this.depositSum < 1000000) {
+                        return this.depositSum = 1000000
+                    }
                     if(this.depositSum < 3000000) {
-                        return this.depositSum = 1000000, this.percentageRate = 2, this.minSliderValue = 1000000
+                        return this.percentageRate = 2, this.minSliderValue = 1000000
                     }
                     if(this.depositSum >= 3000000 && this.depositSum <= 4999999) {
                         return this.percentageRate = 2.75
@@ -143,8 +161,11 @@ class Deposit implements IDeposit{
                 }
                 else if (this.depositPeriod >= 2 && this.depositPeriod < 7) {
                     this.minSliderValue = 1000000
+                    if(this.depositSum < 1000000) {
+                        return this.depositSum = 1000000
+                    }
                     if(this.depositSum < 3000000) {
-                        return this.depositSum = 1000000, this.percentageRate = 3.25, this.minSliderValue = 1000000
+                        return this.percentageRate = 3.25, this.minSliderValue = 1000000
                     }
                     if(this.depositSum >= 3000000 && this.depositSum <= 4999999) {
                         return this.percentageRate = 4
@@ -155,8 +176,11 @@ class Deposit implements IDeposit{
                 }
                 if(this.depositPeriod >= 7 && this.depositPeriod < 14) {
                     this.minSliderValue = 1000000
+                    if(this.depositSum < 1000000) {
+                        return this.depositSum = 1000000
+                    }
                     if(this.depositSum < 3000000) {
-                        return this.depositSum = 1000000, this.percentageRate = 3.5, this.minSliderValue = 1000000
+                        return this.percentageRate = 3.5, this.minSliderValue = 1000000
                     }
                     if(this.depositSum >= 3000000 && this.depositSum <= 4999999) {
                         return this.percentageRate = 4.05
@@ -167,8 +191,11 @@ class Deposit implements IDeposit{
                 }
                 if(this.depositPeriod >= 14 && this.depositPeriod < 21) {
                     this.minSliderValue = 1000000
+                    if(this.depositSum < 1000000) {
+                        return this.depositSum = 1000000
+                    }
                     if(this.depositSum < 3000000) {
-                        return this.depositSum = 1000000, this.percentageRate = 3.75, this.minSliderValue = 1000000
+                        return this.percentageRate = 3.75, this.minSliderValue = 1000000
                     }
                     if(this.depositSum >= 3000000 && this.depositSum <= 4999999) {
                         return this.percentageRate = 4.1
@@ -179,8 +206,11 @@ class Deposit implements IDeposit{
                 }
                 if(this.depositPeriod >= 21 && this.depositPeriod < 31) {
                     this.minSliderValue = 1000000
+                    if(this.depositSum < 1000000) {
+                        return this.depositSum = 1000000
+                    }
                     if(this.depositSum < 3000000) {
-                        return this.depositSum = 1000000, this.percentageRate = 4, this.minSliderValue = 1000000
+                        return this.percentageRate = 4, this.minSliderValue = 1000000
                     }
                     if(this.depositSum >= 3000000 && this.depositSum <= 4999999) {
                         return this.percentageRate = 4.15
