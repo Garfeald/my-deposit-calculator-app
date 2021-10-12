@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="596b8f7d-9b71-4d9a-81e1-e86d86103266" name="Changes" comment="add kind switch case">
+    <list default="true" id="596b8f7d-9b71-4d9a-81e1-e86d86103266" name="Changes" comment="add print">
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_10_2021,_22_40_[Changes]/shelved.patch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_10_2021__22_40__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/DepositCalc/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/DepositCalc/index.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/DepositCalc/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/DepositCalc/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/deposit.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/deposit.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,7 +34,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$USER_HOME$/projects/xbpm-controls-front" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="ts.external.directory.path" value="$PROJECT_DIR$/node_modules/typescript/lib" />
     <property name="vue.rearranger.settings.migration" value="true" />
@@ -48,7 +49,8 @@
       <updated>1633791609291</updated>
       <workItem from="1633791610556" duration="21243000" />
       <workItem from="1633872639835" duration="10639000" />
-      <workItem from="1633936688102" duration="27055000" />
+      <workItem from="1633936688102" duration="27573000" />
+      <workItem from="1634022750376" duration="3868000" />
     </task>
     <task id="LOCAL-00001" summary="add kind switch case">
       <created>1633981186482</created>
@@ -57,7 +59,14 @@
       <option name="project" value="LOCAL" />
       <updated>1633981186482</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="add print">
+      <created>1633984187042</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1633984187042</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -77,6 +86,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="add kind switch case" />
-    <option name="LAST_COMMIT_MESSAGE" value="add kind switch case" />
+    <MESSAGE value="add print" />
+    <option name="LAST_COMMIT_MESSAGE" value="add print" />
   </component>
 </project>

@@ -13,6 +13,7 @@ class Deposit implements IDeposit{
     depositSum = 0
     percentageRate = 0
     minSliderValue = 0
+    minDaysValue = 1
     constructor() {
         makeAutoObservable(this)
     }
@@ -40,6 +41,7 @@ class Deposit implements IDeposit{
     actualDepositKind = (kind: string) => {
         switch (kind) {
             case 'unic':
+                this.minDaysValue = 1
                 if(this.depositPeriod < 2){
                     this.minSliderValue = 1000000
                     if(this.depositSum < 3000000) {
@@ -126,6 +128,7 @@ class Deposit implements IDeposit{
                 }
                 break
             case 'standart':
+                this.minDaysValue = 1
                 if(this.depositPeriod < 2){
                     this.minSliderValue = 1000000
                     if(this.depositSum < 3000000) {
@@ -212,6 +215,7 @@ class Deposit implements IDeposit{
                 }
                 break
             case "replenish":
+                this.minDaysValue = 91
                 if(this.depositPeriod < 121) {
                     this.minSliderValue = 5000000
                     this.percentageRate = 4.74

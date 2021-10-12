@@ -57,12 +57,18 @@ export const DepositCalc: FC = observer((ref): ReactElement => {
         totalDepositSum && setDepositIncome(totalDepositSum - depValue)
     },[depValue, totalDepositSum, daysValue, deposit.percentageRate])
 
+    useEffect(() => {
+        if (daysValue < deposit.minDaysValue) {
+            setDaysValue(deposit.minDaysValue)
+        }
+    },[deposit.minDaysValue])
+
     const base = 'DepositCalc'
 
     return (
         <div className={base} >
             <ReactToPrint
-                trigger={() => <button className="Print" >Печать</button>}
+                trigger={() => <button className="Print" >Печать PDF</button>}
                 content={() => depositRef.current}
             />
             <div className={`${base}__block`} ref={depositRef}>
@@ -106,7 +112,7 @@ export const DepositCalc: FC = observer((ref): ReactElement => {
                                 </div>
                             </div>
                                 <Slider
-                                    min={1}
+                                    min={deposit.minDaysValue}
                                     max={365}
                                     step={1}
                                     value={daysValue}
