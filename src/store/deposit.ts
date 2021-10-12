@@ -120,7 +120,7 @@ class Deposit implements IDeposit{
                 if(this.depositPeriod >= 31 && this.depositPeriod < 91) {
                     this.minSliderValue = 500000
                     if(this.depositSum <= 1000000) {
-                        return this.depositSum = 500000, this.percentageRate = 4.9, this.minSliderValue = 500000
+                        return this.percentageRate = 4.9, this.minSliderValue = 500000
                     }
                     if(this.depositSum >= 1000000 && this.depositSum <= 7999999) {
                         return this.percentageRate = 5.15
@@ -132,7 +132,7 @@ class Deposit implements IDeposit{
                 if(this.depositPeriod >= 91) {
                     this.minSliderValue = 500000
                     if(this.depositSum <= 1000000) {
-                        return this.depositSum = 500000, this.percentageRate = 4.8, this.minSliderValue = 500000
+                        return this.percentageRate = 4.8, this.minSliderValue = 500000
                     }
                     if(this.depositSum >= 1000000 && this.depositSum <= 7999999) {
                         return this.percentageRate = 5.05
@@ -222,7 +222,7 @@ class Deposit implements IDeposit{
                 if(this.depositPeriod >= 31 && this.depositPeriod < 91) {
                     this.minSliderValue = 500000
                     if(this.depositSum <= 1000000) {
-                        return this.depositSum = 500000, this.percentageRate = 5, this.minSliderValue = 500000
+                        return this.percentageRate = 5, this.minSliderValue = 500000
                     }
                     if(this.depositSum >= 1000000 && this.depositSum <= 7999999) {
                         return this.percentageRate = 5.25
@@ -234,7 +234,7 @@ class Deposit implements IDeposit{
                 if(this.depositPeriod >= 91) {
                     this.minSliderValue = 500000
                     if(this.depositSum <= 1000000) {
-                        return this.depositSum = 500000, this.percentageRate = 4.9, this.minSliderValue = 500000
+                        return this.percentageRate = 4.9, this.minSliderValue = 500000
                     }
                     if(this.depositSum >= 1000000 && this.depositSum <= 7999999) {
                         return this.percentageRate = 5.15

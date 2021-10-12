@@ -6,7 +6,7 @@ import './index.css';
 import {correctEntryDays, LightTooltip} from "../../helpers";
 import ReactToPrint from 'react-to-print';
 
-export const DepositCalc: FC = observer((ref): ReactElement => {
+export const DepositCalc: FC = observer((): ReactElement => {
 
     const [daysValue, setDaysValue] = useState<number>(1);
 
