@@ -5,6 +5,8 @@ import deposit from '../../store/deposit'
 import './index.css';
 import {correctEntryDays, LightTooltip} from "../../helpers";
 import ReactToPrint from 'react-to-print';
+import {DepositKind} from "../../types/deposit";
+const {deposits} = require('../../../depcalc.json')
 
 export const DepositCalc: FC = observer((): ReactElement => {
 
@@ -35,15 +37,17 @@ export const DepositCalc: FC = observer((): ReactElement => {
     const depositRef = useRef(null)
 
     useEffect(() => {
-        deposit.actualDepositKind(deposit.depositKindCode)
-    },[])
-
-    useEffect(() => {
         setDepValue(deposit.depositSum)
     },[deposit.depositSum])
 
     useEffect(() => {
-        deposit.actualDepositKind(deposit.depositKindCode)
+        const {actualCalcIndicators, depositKindCode} = deposit
+        actualCalcIndicators(depositKindCode, deposits)
+    }, [])
+
+    useEffect(() => {
+        const {actualCalcIndicators, depositKindCode} = deposit
+        actualCalcIndicators(depositKindCode, deposits)
     }, [deposit.depositSum, deposit.depositPeriod, deposit.depositKindCode, deposit.percentageRate])
 
     useEffect(() => {
@@ -62,6 +66,15 @@ export const DepositCalc: FC = observer((): ReactElement => {
             setDaysValue(deposit.minDaysValue)
         }
     },[deposit.minDaysValue])
+
+    useEffect(() => {
+        const {setDepositKindList, setDepositParams} = deposit
+        const depositKindList = deposits && deposits.length > 0 && deposits.map((dep: DepositKind) => {
+            return {code: dep.code, name: dep.name}
+        })
+        setDepositKindList(depositKindList)
+        setDepositParams(deposits)
+    }, [deposits])
 
     const base = 'DepositCalc'
 
@@ -150,15 +163,15 @@ export const DepositCalc: FC = observer((): ReactElement => {
                         <div className={`${base}__total-sum`}>
                             <div className={`${base}__total-item`}>
                                 <p>Процентная ставка</p>
-                                <h3>{deposit.percentageRate.toFixed(2)}%</h3>
+                                <h3>{deposit.percentageRate && deposit.percentageRate.toFixed(2)}%</h3>
                             </div>
                             <div className={`${base}__total-item`}>
                                 <p>Сумма через <span>{daysValue} {correctEntryDays(daysValue)}</span></p>
-                                <h3>{totalDepositSum.toFixed(2)} Р</h3>
+                                <h3>{totalDepositSum && totalDepositSum.toFixed(2)} Р</h3>
                             </div>
                             <div className={`${base}__total-item`}>
                                 <p>Доход</p>
-                                <h3>{depositIncome.toFixed(2)} Р</h3>
+                                <h3>{depositIncome && depositIncome.toFixed(2)} Р</h3>
                             </div>
                         </div>
                         <div className={`${base}__total-notification`}>

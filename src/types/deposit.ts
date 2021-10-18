@@ -12,6 +12,26 @@ export interface IDeposit {
     depositSumChange: (sum: number) => void
     percentageRate: number
     totalSum: ({depValue, percentageRate, daysValue, daysInYear, toPercent}: TotalSum) => number
+    setDepositKindList: (list: DepositKind[]) => void
+    depositParams: IDepositParams[]
+    setDepositParams: (params: IDepositParams[]) => void
+    actualCalcIndicators: (kind: string, deposits: IDepositParams[]) => void
+}
+
+export interface IDepositParams {
+    code: string,
+    name: string,
+    param: Param[]
+}
+
+export type Param = {
+    period_from: number,
+    summs_and_rate:SumsAndRate[]
+}
+
+export type SumsAndRate = {
+    summ_from: number,
+    rate: number
 }
 
 export type DepositKind = {
